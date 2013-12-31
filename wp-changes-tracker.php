@@ -1,12 +1,14 @@
 <?php
 /*
 Plugin Name: WP Changes Tracker
-Plugin URI: http://pixeline.be
+Plugin URI: http://planet.io
 Description: Maintain a log of all themes, plugins and wordpress changes.
 
-Version: 2.0.3
-Author: pixeline
-Author URI: http://pixeline.be
+Version: 3.0
+Author: Peter Philips
+Author URI: http://planet.io
+Original Author: pixeline
+Original Author URI: http://pixeline.be
 */
 
 if (!class_exists('wp_changes_tracker')) {
