@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Changes Tracker
-Plugin URI: http://planet.io
+Plugin URI: https://github.com/planetio/WP-Changes-Tracker
 Description: Maintain a log of all themes, plugins and wordpress changes.
 
 Version: 3.0
