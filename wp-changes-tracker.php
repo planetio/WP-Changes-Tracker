@@ -480,7 +480,7 @@ if (!class_exists('wp_changes_tracker')) {
 ?>
 			<div class="wrap">
 			<h1>WP Changes Tracker</h1>
-			<p><?php _e('by <a href="http://www.planet.io" target="_blank" class="external">Planet</a>', $this->localizationDomain); ?></p>
+			<p><?php _e('by <a href="http://www.planet.io" target="_blank" class="external">PlanetIO</a>', $this->localizationDomain); ?></p>
 
 			<p style="font-weight:bold;"><?php _e('If you like this plugin, please <a href="http://wordpress.org/extend/plugins/wp-changes-tracker/" target="_blank">give it a good rating</a> on the Wordpress Plugins repository, and if you make any money out of it, <a title="Paypal donation page" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SRGBUYVJEY436">send a few coins over to me</a>!', $this->localizationDomain); ?></p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
