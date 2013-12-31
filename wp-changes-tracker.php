@@ -5,7 +5,7 @@ Plugin URI: https://github.com/planetio/WP-Changes-Tracker
 Description: Maintain a log of all themes, plugins and wordpress changes.
 
 Version: 3.0
-Author: Peter Philips
+Author: PlanetIO
 Author URI: http://planet.io
 Original Author: pixeline
 Original Author URI: http://pixeline.be
@@ -45,7 +45,7 @@ if (!class_exists('wp_changes_tracker')) {
 			$this->url = plugins_url(basename(__FILE__), __FILE__);
 			$this->urlpath = plugins_url('', __FILE__);
 			$this->settings_link = '<a href="options-general.php?page=' . basename(__FILE__) . '">' . __('Settings') . '</a>';
-			$this->types = array('plugin','theme','option','setting','core','multisite','manual', $this->default_type );
+			$this->types = array('plugin','theme','option','setting','core','multisite','manual','post', $this->default_type );
 			//Initialize the options
 			$this->getOptions();
 
@@ -104,6 +104,9 @@ if (!class_exists('wp_changes_tracker')) {
 			add_action('activate_blog',array(&$this,'activate_blog'),10,1);
 			add_action('delete_blog',array(&$this,'delete_blog'),10,2);
 
+      // post changes
+			add_action('delete_post',array(&$this,'delete_post'),10,1);
+			add_action('save_post',array(&$this,'save_post'),10,1);
 		}
 
 		function admin_initialisation(){
@@ -189,7 +192,18 @@ if (!class_exists('wp_changes_tracker')) {
 		function option_added($option,$value){
 			$this->log('option: "'. $option . '" added, value: <pre>'. print_r($value,true).'</pre>','option');
 		}
+		
+		function delete_post($postid){
+      global $wpdb;
+      $postdata = $wpdb->get_row("SELECT * FROM wp_posts WHERE id = $postid", ARRAY_A);
+      $this->log('post deleted('.$postid.'): "'. $postdata['post_title'].'"; values: <pre>'.print_r($postdata, true).'</pre>', 'post');
+		}
 
+    function save_post($postid) {
+      global $wpdb;
+      $postdata = $wpdb->get_row("SELECT * FROM wp_posts WHERE id = $postid", ARRAY_A);
+      $this->log('post saved('.$postid.'): "'. $postdata['post_title'].'"; values: <pre>'.print_r($postdata, true).'</pre>', 'post');
+    }
 		/**
 		 * Log plugin activations and deactivations.
 		 *
