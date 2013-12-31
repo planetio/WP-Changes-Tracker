@@ -15,7 +15,7 @@ if (!class_exists('wp_changes_tracker')) {
 	class wp_changes_tracker {
 
 		private $pluginName = 'WP Changes Tracker';
-		private $pluginVersion = '2.0.0';
+		private $pluginVersion = '3.0.0';
 		private $dbVersion= '1.1';
 		private $dbNameRoot=  'changes_tracker';
 		const pluginId = 'wp_changes_tracker';
@@ -480,17 +480,16 @@ if (!class_exists('wp_changes_tracker')) {
 ?>
 			<div class="wrap">
 			<h1>WP Changes Tracker</h1>
-			<p><?php _e('by <a href="http://www.pixeline.be" target="_blank" class="external">pixeline</a>', $this->localizationDomain); ?></p>
+			<p><?php _e('by <a href="http://www.planet.io" target="_blank" class="external">Planet</a>', $this->localizationDomain); ?></p>
 
-			<p style="font-weight:bold;"><?php _e('If you like this plugin, please <a href="http://wordpress.org/extend/plugins/wp-changes-tracker/" target="_blank">give it a good rating</a> on the Wordpress Plugins repository, and if you make any money out of it, <a title="Paypal donation page" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=J9X5B6JUVPBHN&lc=US&item_name=pixeline%20%2d%20Wordpress%20plugin&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest">send a few coins over to me</a>!', $this->localizationDomain); ?></p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_donations" />
-<input type="hidden" name="business" value="J9X5B6JUVPBHN" />
-<input type="hidden" name="lc" value="US" />
-<input type="hidden" name="item_name" value="pixeline - Wordpress plugin: WP Changes Tracker" />
-<input type="hidden" name="currency_code" value="EUR" />
-<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest" />
-<input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="PayPal - The safer, easier way to pay online!" />
-<img src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" alt="" width="1" height="1" border="0" /></form>
+			<p style="font-weight:bold;"><?php _e('If you like this plugin, please <a href="http://wordpress.org/extend/plugins/wp-changes-tracker/" target="_blank">give it a good rating</a> on the Wordpress Plugins repository, and if you make any money out of it, <a title="Paypal donation page" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SRGBUYVJEY436">send a few coins over to me</a>!', $this->localizationDomain); ?></p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="SRGBUYVJEY436">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 
 			<h2 style="border-top:1px solid #999;padding-top:1em;"><?php _e('Settings',$this->localizationDomain);?></h2>
 			<p>
